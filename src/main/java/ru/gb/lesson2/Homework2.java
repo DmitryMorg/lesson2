@@ -9,18 +9,21 @@ package ru.gb.lesson2;
 public class Homework2 {
     public static void main(String[] args) {
         System.out.println(sumCheck(2,66));
-        printPosOrNeg();
+
+        printPosOrNeg(5);
+
         System.out.println(checkPosOrNeg(-2324));
-        printString();
+
+        printString("Stop WAR!", 3);
+
+        System.out.println(isYearLeap(2024));
     }
 
     static boolean sumCheck(int a, int b) {
-        int sum = a + b;
-        return sum >= 10 && sum <= 20;
+        return a + b >= 10 && a + b <= 20;
     }
 
-    static void printPosOrNeg() {
-        int a = 5;
+    static void printPosOrNeg(int a) {
         System.out.println(a >= 0? "Positive" : "Negative");
     }
 
@@ -28,9 +31,13 @@ public class Homework2 {
         return a <= 0;
     }
 
-    static void printString() {
-        for (int a = 0; a < 3; a++) {
-            System.out.println("Stop WAR!");
+    static void printString(String str, int count) {
+        for (int a = 0; a < count; a++) {
+            System.out.println(str);
         }
+    }
+
+    static boolean isYearLeap (int year) {
+        return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
     }
 }
